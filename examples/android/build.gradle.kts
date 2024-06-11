@@ -20,6 +20,12 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     namespace = "com.connectrpc.examples.android"
+
+    packaging {
+        resources {
+            excludes.add("/META-INF/*")
+        }
+    }
 }
 
 dependencies {
@@ -29,8 +35,9 @@ dependencies {
     implementation(libs.android.multidex)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.android.material)
+    implementation("build.buf:protovalidate:0.2.1")
 
     implementation(project(":okhttp"))
-    implementation(project(":examples:generated-google-javalite"))
+    implementation(project(":examples:generated-google-java"))
     implementation(libs.okhttp.core)
 }

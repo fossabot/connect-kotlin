@@ -26,7 +26,7 @@ import com.connectrpc.ProtocolClientConfig
 import com.connectrpc.eliza.v1.ConverseRequest
 import com.connectrpc.eliza.v1.ElizaServiceClient
 import com.connectrpc.eliza.v1.SayRequest
-import com.connectrpc.extensions.GoogleJavaLiteProtobufStrategy
+import com.connectrpc.extensions.GoogleJavaProtobufStrategy
 import com.connectrpc.impl.ProtocolClient
 import com.connectrpc.okhttp.ConnectOkHttpClient
 import com.connectrpc.protocols.NetworkProtocol
@@ -84,7 +84,7 @@ class ElizaChatActivity : AppCompatActivity() {
             httpClient = ConnectOkHttpClient(okhttpClient),
             ProtocolClientConfig(
                 host = host,
-                serializationStrategy = GoogleJavaLiteProtobufStrategy(),
+                serializationStrategy = GoogleJavaProtobufStrategy(),
                 networkProtocol = selectedNetworkProtocolOption,
                 // RPC operations that involve network I/O will
                 // use this coroutine context.
